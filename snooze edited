@@ -1,0 +1,129 @@
+#custom song 2 snooze sza
+#sheet music https://musescore.com/user/7114091/scores/13600537
+#vocal samples https://www.youtube.com/watch?v=7Wkw8zmfTOY https://www.youtube.com/watch?v=OThxr4ANq18
+
+use_bpm 120
+use_synth :piano
+
+#variables for samples
+sza = "C:/Users/micah_mizell-hasting/Documents/Audacity/SZA - Snooze (Vocals Only) ACAPELLA.mp3"
+gmawords = "C:/Users/micah_mizell-hasting/Documents/Audacity/SZA - Open Arms ft Travis Scott [ACAPELLA].mp3"
+crying = "C:/Users/micah_mizell-hasting/Documents/Audacity/snooze main one crying.mp3"
+
+=begin
+#array
+i=0
+sza_samples = [gmawords, sza, crying]
+
+3.times do
+  sample(sza_samples[i])
+  sleep()
+  i = i + 1
+end
+=end
+
+#parameterized function
+define :pfun do |a1, b1|
+  play  #F4, A4
+  sleep 0.5
+  play  #G4, FS4
+  sleep 0.5
+  play :FS4
+  sleep 0.5
+  play :E4
+  sleep 0.5
+  play :E4
+  sleep 0.5
+  play :D4
+  sleep 1
+  play :FS4
+  sleep 1
+  play :G4
+  sleep 0.5
+  play  #FS4 ,A4
+  sleep 0.5
+  play  #E4,D4
+  sleep 0.5
+  play  #E4, D4
+  sleep 0.5
+  play  #D4, E4
+  sleep 1
+  play  #D4, B4
+  sleep 0.5
+end
+
+pfun :F4, :A4
+pfun :G4, :FS4
+pfun :FS4, :A4
+pfun :E4, :D4
+pfun :E4, :D4
+pfun :D4, :E4
+pfun :D4, :B4
+
+
+sample gmawords
+sleep 22
+
+#beginning notes
+
+
+#first time for parameterized function
+play :F4
+sleep 0.5
+play :G4
+sleep 0.5
+play :FS4
+sleep 0.5
+play :E4
+sleep 0.5
+play :E4
+sleep 0.5
+play :D4
+sleep 1
+play :FS4
+sleep 1
+play :G4
+sleep 0.5
+play :FS4
+sleep 0.5
+play :E4
+sleep 0.5
+play :E4
+sleep 0.5
+play :D4
+sleep 1
+play :D4
+sleep 0.5
+
+#notes inbetween
+
+#second time for parameterized function
+play :A4
+sleep 0.5
+play :FS4
+sleep 0.5
+play :FS4
+sleep 0.5
+play :E4
+sleep 0.5
+play :E4
+sleep 0.5
+play :D4
+sleep 1
+play :FS4
+sleep 1
+play :G4
+sleep 0.5
+play :A4
+sleep 0.5
+play :D4
+sleep 0.5
+play :D4
+sleep 0.5
+play :E4
+sleep 1
+play :B4
+sleep 0.5
+
+#outro w/ beats fading out + sample i think this will be loop variable
+sample crying, amp: 0.5
