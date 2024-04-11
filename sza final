@@ -1,0 +1,91 @@
+#custom song 2 snooze sza
+#sheet music https://musescore.com/user/7114091/scores/13600537
+#vocal samples https://www.youtube.com/watch?v=7Wkw8zmfTOY https://www.youtube.com/watch?v=OThxr4ANq18
+
+use_bpm 138
+use_synth :piano
+
+#variables for samples
+sza = "C:/Users/micah_mizell-hasting/Documents/Audacity/sza snoose vocals (again).mp3"
+#need to add another sample of vocals
+crying = "C:/Users/micah_mizell-hasting/Documents/Audacity/snooze main one crying.mp3"
+
+#array
+i=0
+sza_samples = [sza, crying]
+
+live_loop :lyrics do
+  2.times do
+    sample(sza_samples[i])
+    sleep(12)
+    i = i + 1
+  end
+end
+
+#beginning notes
+play :a3
+sleep 1
+play :b3
+sleep 1
+play :d4
+sleep 1
+play :fs4, release: 3
+sleep 2
+play :r
+sleep 2
+play :a3
+
+play :a3
+sleep 1
+play :b3
+sleep 1
+play :d4
+sleep 1
+play :fs4
+sleep 1.5
+play :e4
+sleep 0.25
+play :fs4
+sleep 0.25
+play :e4
+sleep 1
+play :r
+sleep 1
+
+sleep 15
+
+#parameterized function
+define :pfun do |a1, a2, a3, a4, a5, a6, a7|
+  play  a1 #F4, A4
+  sleep 0.5
+  play  a2 #G4, FS4
+  sleep 0.5
+  play :FS4
+  sleep 0.5
+  play :E4
+  sleep 0.5
+  play :E4
+  sleep 0.5
+  play :D4
+  sleep 1
+  play :FS4
+  sleep 1
+  play :G4
+  sleep 0.5
+  play a3 #FS4 ,A4
+  sleep 0.5
+  play a4 #E4,D4
+  sleep 0.5
+  play a5 #E4, D4
+  sleep 0.5
+  play a6 #D4, E4
+  sleep 1
+  play a7 #D4, B4
+  sleep 0.5
+end
+
+pfun :F4, :G4, :FS4, :E4, :E4, :D4, :D4
+
+pfun :A4, :FS4, :A4, :D4, :D4, :E4, :B4
+
+#outro notes that fade out using loop variable
