@@ -52,7 +52,7 @@ sleep 1
 play :r
 sleep 1
 
-sleep 15
+sleep 28
 
 #parameterized function
 define :pfun do |a1, a2, a3, a4, a5, a6, a7|
@@ -89,3 +89,10 @@ pfun :F4, :G4, :FS4, :E4, :E4, :D4, :D4
 pfun :A4, :FS4, :A4, :D4, :D4, :E4, :B4
 
 #outro notes that fade out using loop variable
+print("with loop")
+x=8
+8.times do
+  sample :bd_boom, amp: x
+  sleep 1
+  x = x - 1
+end
