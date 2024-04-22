@@ -6,9 +6,10 @@ use_bpm 138
 use_synth :piano
 
 #variables for samples
-sza = "C:/Users/micah_mizell-hasting/Documents/Audacity/sza snoose vocals (again).mp3"
-#need to add another sample of vocals
-crying = "C:/Users/micah_mizell-hasting/Documents/Audacity/snooze main one crying.mp3"
+sza = "/Users/micahmizell/Documents/SZA - Snooze (Vocals Only) ACAPELLA (1).wav"
+crying = "/Users/micahmizell/Desktop/snooze main one crying (1).mp3"
+lastlyrics = "/Users/micahmizell/Documents/sza snooze ending lyrics.wav"
+beat = "/Users/micahmizell/Documents/SZA - Snooze end beat(Instrumental (Audio)).wav"
 
 #array
 i=0
@@ -52,7 +53,7 @@ sleep 1
 play :r
 sleep 1
 
-sleep 28
+sleep 29
 
 #parameterized function
 define :pfun do |a1, a2, a3, a4, a5, a6, a7|
@@ -88,11 +89,16 @@ pfun :F4, :G4, :FS4, :E4, :E4, :D4, :D4
 
 pfun :A4, :FS4, :A4, :D4, :D4, :E4, :B4
 
+sample lastlyrics
+
+sleep 27
+
 #outro notes that fade out using loop variable
 print("with loop")
-x=8
-8.times do
-  sample :bd_boom, amp: x
-  sleep 1
+x=2
+2.times do
+  sample :ambi_dark_woosh, amp: x
+  sleep 2
   x = x - 1
 end
+stop
